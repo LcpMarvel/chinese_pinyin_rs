@@ -8,4 +8,8 @@ describe ChinesePinyinRs do
   it "turns chinese to pinyin" do
     expect(ChinesePinyinRs.translate("中国", " ", false, false, false)).to eq "zhong guo"
   end
+
+  it "uses t for convenient way" do
+    expect(ChinesePinyinRs.t("中国")).to eq "zhong guo"
+  end
 end

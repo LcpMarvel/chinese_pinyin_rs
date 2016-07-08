@@ -1,8 +1,13 @@
 # ChinesePinyinRs
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/chinese_pinyin_rs`. To experiment with that code, run `bin/console` for an interactive prompt.
+代码逻辑参照 [chinese_pinyin](https://github.com/flyerhzm/chinese_pinyin) , 使用 `Rust` 实现,
 
-TODO: Delete this and the text above, and describe your gem
+
+```
+       user     system      total        real
+  12.000000   0.080000  12.080000 ( 12.125784)
+  29.320000   0.100000  29.420000 ( 29.536190)
+```
 
 ## Installation
 
@@ -22,13 +27,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+ChinesePinyinRs.t('中国')  => "zhong guo"
+ChinesePinyinRs.t('你好world') => "ni hao world"
+ChinesePinyinRs.t('中国', splitter: '-') => "zhong-guo"
+ChinesePinyinRs.t('中国', splitter: '') => "zhongguo"
+ChinesePinyinRs.t('中国', tone: true) => "zhong1 guo2"
+ChinesePinyinRs.t('中国', tonemarks: true) => "zhōng guó"
+```
 
 ## Contributing
 
