@@ -1,0 +1,12 @@
+[package]
+name = "chinese_pinyin_rs"
+version = "0.1.0"
+authors = ["lcp <lcpmarvel@gmail.com>"]
+
+[dependencies]
+libc = "0.2.11"
+chinese_pinyin = { git = "https://github.com/LcpMarvel/chinese_pinyin.git" }
+
+[lib]
+name = "chinese_pinyin_rs"
+crate-type = ["dylib"]
